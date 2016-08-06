@@ -8,9 +8,6 @@ import { SearchService } from '../search.service';
 })
 export class SearchComponent implements OnInit {
 
-  @Input()
-  keyword: string = '';
-
   constructor(private searchSearch: SearchService) {
   }
 

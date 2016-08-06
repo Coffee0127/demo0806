@@ -4,6 +4,7 @@ import { IArticle } from './shared/article';
 @Injectable()
 export class SearchService {
 
+  keyword: string = '';
   data: IArticle[];
 
   defaults: IArticle[] = [
@@ -68,6 +69,7 @@ export class SearchService {
   }
 
   doSearch(keyword) {
+    this.keyword = keyword;
     this.data = this.defaults.filter( (value: IArticle) => {
       return value.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
     });

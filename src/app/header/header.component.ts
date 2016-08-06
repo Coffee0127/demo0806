@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: '.header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   num = 1;
 
-  constructor() { }
+  constructor(private searchSearch: SearchService) { }
 
   ngOnInit() {
   }
