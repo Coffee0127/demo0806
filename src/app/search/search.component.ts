@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-search',
@@ -7,38 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  content: string;
+  @Input()
+  keyword: string = '';
 
-  @Output()
-  search = new EventEmitter();
-
-  constructor() { }
+  constructor(private searchSearch: SearchService) {
+  }
 
   ngOnInit() {
-  }
-
-  // without strong type
-  /*showText(event: any) {
-    console.log(event);
-    if (event.keyCode == 13) {
-      this.content = event.target.value;
-    }
-  }*/
-
-  // with strong type
-  showText(event: KeyboardEvent) {
-    var input = event.target as HTMLInputElement;
-    if (event.keyCode == 13) {
-        this.content = input.value;
-    }
-  }
-
-  // with 範本參考物件
-  showText2(event: KeyboardEvent, input: HTMLInputElement) {
-    if (event.keyCode == 13) {
-        this.content = input.value;
-        this.search.emit(input.value);
-    }
   }
 
 }

@@ -5,15 +5,16 @@
         <!--
         <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
         (keyup)="showText($event)"
-        [(ngModel)]="content"><input type="button" value="搜尋" id="searchbutton">
+        [(ngModel)]="keyword"><input type="button" value="搜尋" id="searchbutton">
         -->
         <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
-        (keyup)="showText($event)"
         #keywordInput
-        (keyup)="showText2($event, keywordInput)"><input type="button" value="搜尋" id="searchbutton">
+        [value]="keyword"
+        (keyup)="searchSearch.doSearch(keywordInput.value)"><input type="button" value="搜尋" id="searchbutton"
+        (click)="searchSearch.doSearch(keywordInput.value)">
         <!-- [(ngModel)]="binding" 雙向綁定 -->
-        <!--<input #box type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="content=box.value"><input type="button" value="搜尋" id="searchbutton">-->
-        <div [innerHTML]="content"></div>
+        <!--<input #box type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="keyword=box.value"><input type="button" value="搜尋" id="searchbutton">-->
+        <div [innerHTML]="keyword"></div>
       </div>
   </div>
 </div>

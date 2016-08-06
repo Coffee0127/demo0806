@@ -11,7 +11,9 @@
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
         <!-- Article START-->
-        <app-article *ngFor="let item of data; let i = index;" [i]="i" [item]="item"></app-article>
+        <app-article
+          *ngFor="let item of searchSearch.data; let i=index;"
+          [i]="i" [item]="item"></app-article>
         <!-- Article END-->
       </div>
     </section>
@@ -22,7 +24,7 @@
       <div id="widgetzone_be_WIDGET_ZONE" class="widgetzone">
 
         <!-- Search START-->
-        <app-search (search)="searchKeyWord=$event"></app-search>
+        <app-search (search)="doSearch($event)"></app-search>
         <!-- Search END -->
         {{searchKeyWord}}
         <!-- Calendar START -->
