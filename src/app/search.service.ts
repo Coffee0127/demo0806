@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IArticle } from './shared/article';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class SearchService {
@@ -64,8 +65,10 @@ export class SearchService {
         }
     ];
 
-  constructor() {
-    this.data = this.defaults;
+  constructor(private http: Http) {
+    http.get('/api/articles.json').subscribe((value) => {
+        this.data = this.defaults = value.json();
+    });
   }
 
   doSearch(keyword) {
