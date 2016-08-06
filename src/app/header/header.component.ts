@@ -1,10 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from '../search.service';
 
+import { MypipePipe } from '../mypipe.pipe';
+
 @Component({
   selector: '.header',
   templateUrl: 'header.component.html',
-  styleUrls: ['header.component.css']
+  styleUrls: ['header.component.css'],
+  pipes: [MypipePipe]
 })
 export class HeaderComponent implements OnInit {
 
