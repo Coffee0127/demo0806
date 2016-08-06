@@ -26,4 +26,11 @@ export class AppComponent {
       this.content = input.value;  
     }
   }
+
+  // with 範本參考物件
+  showText2(event: KeyboardEvent, input: HTMLInputElement) {
+    if (event.keyCode == 13) {
+      this.content = input.value;  
+    }
+  }
 }
