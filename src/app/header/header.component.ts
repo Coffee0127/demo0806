@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit {
   pageTitle: string = 'The Will Will Web!!';
   pageTitleLink = 'http://blog.miniasp.com/';
 
+  hot: string[] = [ 'Visual Studio', 'IT', '20', '偵錯' ];
+
   @Input()
   pageSubTitle: string;
 
